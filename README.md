@@ -1,7 +1,7 @@
 <h1>Web Project</h1>
 A Marketplace Web Programing Using Public Rest API
 <h1>Uses</h1>
-- fakestore API <a href="https://fakestore.com">fakestore.com</a>
+- fakestore API <a href="https://fakestoreapi.com">fakestore.com</a>
 <h1>About Me</h1>
 <marquee>GalaxyBuilder</marquee>
 - Hi, I’m GalaxyBuilder! Nice To Meet You👋
