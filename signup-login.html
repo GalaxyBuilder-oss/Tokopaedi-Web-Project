@@ -1,0 +1,43 @@
+<!-- Deklarasi tipe dokumen dan bahasa -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Pengaturan karakter untuk tampilan yang tepat -->
+    <meta charset="UTF-8">
+    <!-- Pengaturan tampilan pada perangkat dengan berbagai lebar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Judul halaman -->
+    <title>Tokopaedi - Fast And Satisfying | Login Page</title>
+    <!-- Penambahan file CSS eksternal -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- Bagian utama konten -->
+    <main class="container-main">
+        <fieldset class="container-profile">
+            <span class="button-back-profile"><i class="material-icons">arrow_back</i></span>
+            <legend class="user-legend">Admin</legend>
+            <div class="main-profile">
+                <form class="form-normal">
+                    <label for="nameid" class="form-hide">Input Name</label>
+                    <input type="text" name="nameid" class="form-hide" id="nameid"><br>
+                    <label for="noid" class="form-hide">Input No. Bank Account</label>
+                    <input type="number" name="noid" class="form-hide" id="noid"><br>
+                    <label for="userid">Input Username</label>
+                    <input type="text" name="userid" id="userid"><br>
+                    <label for="emailid" class="form-hide">Input E-mail</label>
+                    <input type="email" class="form-hide" name="emailid" id="emailid"><br>
+                    <label for="passid">Input Password</label>
+                    <input type="password" name="passid" id="passid" maxlength="6" size="6"><br>
+                    <input type="submit" name="submit" id="submit" value="Login"><br>
+                    <span class="form-signup">Haven't Account? <a href="#signup">Create Now!</a></span>
+                </form>
+            </div>
+        </fieldset>
+    </main>
+    <!-- Penambahan file skrip JavaScript eksternal -->
+    <script src="./script.js"></script>
+</body>
+</html>
