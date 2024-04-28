@@ -1,11 +1,10 @@
-<h1>Web Project</h1>
+# Web Project
 A Marketplace Web Programing Using Public Rest API
-<h1>Uses</h1>
+# Components
 - HTML, CSS And JAVASCRIPT
 - Bootstrap 5
-- fakestore API <a href="https://fakestoreapi.com">fakestore.com</a>
-<h1>About Me</h1>
-<marquee>GalaxyBuilder</marquee>
+- [Fakestore API](https://fakestoreapi.com)
+# About Me
 - Hi, I’m GalaxyBuilder! Nice To Meet You👋
 - 👀 I’m interested in Coding And Designing
 - 🌱 I’m currently learning A Java Language
