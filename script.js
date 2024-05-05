@@ -494,7 +494,7 @@ const loader = () => {
     document.body.append(loaderLayout)
     setTimeout(()=>loaderLayout.remove(),4000)
 }
-// loader()
+loader()
 
 // mengecek apakah isCheckDetails? berisi true atau false nya
 // jika true, maka akan memanggil fungsi produkDetails()
