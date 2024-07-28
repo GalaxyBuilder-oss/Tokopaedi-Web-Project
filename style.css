@@ -32,7 +32,7 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-content: center;
+    align-items: center;
     >.logo {
         width: 40%;
         height: 100%;
@@ -133,6 +133,8 @@ body {
     animation: slideDown .4s;
     background-color: #ffffff50;
     backdrop-filter: blur(10px);
+    display:flex;
+    align-items: center;
 }
 .sticky-header .nav-head a {
     color: #000;
@@ -140,7 +142,7 @@ body {
 
 /* Popup menu profile*/
 .button-container {
-    margin: 10px 0 0 2%;
+    margin: 1px 0;
     border-radius: 50%;
     display: grid;
     transition: all .4s;
@@ -747,7 +749,7 @@ body {
 
 
 /* For devices screen max-width 1024px and min-width 769px, commonly laptop User*/
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+/* @media screen and (min-width: 1024px) {
     #container-header {
         width: 100%;
         height: 14vh;
@@ -809,7 +811,7 @@ body {
             }
         }
     }
-}
+} */
 
 /* For devices screen max width 768px and min-width 481px, commonly Ipads and Tablet User */
 @media screen and (max-width: 768px) and (min-width: 481px) {
@@ -1016,6 +1018,9 @@ body {
         position: fixed;
         top: 16px;
     }
+    .sticky-header {
+        padding: 4px;
+    }
     .button-container {
         margin: 0;
         display: flex;
@@ -1068,7 +1073,7 @@ body {
                     font-size: 10px;
                 }
             }
-        
+
         }
     }
     .showcase-item {

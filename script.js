@@ -1,7 +1,7 @@
 // pendeklarasian favicon agar di setiap halaman html sama
 const favicon = document.createElement('link')
 favicon.rel="shortcut icon"
-favicon.href="./favicon.ico"
+favicon.href="favicon.ico"
 favicon.type="image/x-tipe"
 document.head.appendChild(favicon)
 
@@ -29,7 +29,7 @@ function showModal(selector, trigger, header, body, footer) {
     const modalFooter = document.createElement('div')
     const modalFooterText = document.createElement('h3')
     const chekoutButton = document.createElement('button')
-    
+
     // Modifikasi Elemen
     modalLayout.classList.add('modal')
     modalContent.classList.add('modal-content')
@@ -87,6 +87,7 @@ function showModal(selector, trigger, header, body, footer) {
 
 // fungsi utama untuk mengambil dan menampilkan data dari API
 async function init() {
+    loader()
     if (!currPage.includes('/detail.html')) {
         // fetch data dari api ke json
         // await berfungsi agar ketika pemanggilan API nya di beri jeda ketika di panggil secara berulang
@@ -109,7 +110,7 @@ async function init() {
         const navMenu = document.querySelector('.nav-head ul')
         const asideMenu = document.querySelector('.aside-menu ul')
         const menuButton = document.querySelector('.button')
-        
+
         // menambahkan attribut ke toTopButton
         toTopButton.href='#top'
         toTopButton.classList.add('to-top')
@@ -151,11 +152,11 @@ async function init() {
           if (document.documentElement.scrollTop > 70) {
                 containerHeader.classList.add("sticky-header")
                 if (document.querySelector('.to-top') == undefined) document.body.appendChild(toTopButton)
-                siteLogo.src='./logo2.png'
+                siteLogo.src='./assets/logo-dark.png'
             } else {
                 containerHeader.classList.remove("sticky-header")
                 toTopButton.remove()
-                siteLogo.src='./logo.png'
+                siteLogo.src='./assets/logo-light.png'
             }
         }
         // menambahkan fungsi ke tombol untuk show/hide menu ketika di klik
@@ -176,14 +177,14 @@ async function init() {
                 aNav.href=`#k${index}`
                 liNav.appendChild(aNav)
                 navMenu.appendChild(liNav)
-    
+
                 const liAside = document.createElement('li')
                 const aAside = document.createElement('a')
                 aAside.innerText = category
                 aAside.href=`#k${index}`
                 liAside.appendChild(aAside)
                 asideMenu.appendChild(liAside)
-    
+
                 categoryTitle.innerText = category
                 categoryTitle.id=`k${index}`
                 contentSection.classList.add('content-list')
@@ -210,7 +211,7 @@ async function init() {
                         const imageProduct = document.createElement('img')
                         const titleProduct = document.createElement('figcaption')
                         const priceProduct = document.createElement('div')
-                        
+
                         layoutProduct.addEventListener("click", ()=> {
                             theProduct.image=product.image
                             theProduct.title=product.title
@@ -222,7 +223,7 @@ async function init() {
                             localStorage.setItem('isCheckDetails?', true)
                             location.href=DetailPage
                         })
-                        
+
                         // memodifikasi elemen
                         imageProduct.src=product.image
                         titleProduct.innerText=product.title
@@ -230,7 +231,7 @@ async function init() {
                         const iconPrice = document.createElement('span')
                         iconPrice.setAttribute('class','material-icons')
                         iconPrice.innerText='sell'
-            
+
                         // memasukkan elemen yang di buat dengan html
                         priceProduct.appendChild(iconPrice)
                         layoutProduct.appendChild(imageProduct)
@@ -251,7 +252,8 @@ async function init() {
 
 //fungsi untuk menampilkan detail dari produk yang dipilih, yang akan di tampilkan di detail.html
 async function produkDetails() {
-    
+
+    loader()
     let userdata = JSON.parse(localStorage.getItem('userdata'))
     const product = JSON.parse(localStorage.getItem('product'))
     const pImage = document.querySelector('img')
@@ -280,7 +282,7 @@ async function produkDetails() {
         notifIcon.classList.add('show-count')
         localStorage.setItem('userdata',JSON.stringify(userdata))
     })
-    
+
     // Modikasi elemen
     document.querySelector('.button-layout').appendChild(notifIcon)
     showModal('section', buyButton, product.title, product.description, `US$${product.price}`)
@@ -295,7 +297,7 @@ async function produkDetails() {
     buyButton.innerText='Buy Now'
     addCartButton.innerText='Add To Cart'
     productRates.innerText=`${product.rating.rate} -`
-    
+
     for (let i=0; i<5;i++) {
         const productRate = document.createElement('span')
         productRate.classList.add('material-icons')
@@ -315,7 +317,7 @@ function user() {
     // change string data from local storage to array or object
     let userData = JSON.parse(localStorage.getItem('userdata')) != null ? JSON.parse(localStorage.getItem('userdata')) : {}
     const backHome = document.querySelector('.button-back-profile')
-    
+
     if (localStorage.getItem('user')=='true' && currPage.includes('/profile.html')){
         const userLegend = document.querySelector('.user-legend')
         const name = document.querySelector('.name')
@@ -487,14 +489,13 @@ const loader = () => {
     loadingBar.classList.add('loading')
     loadingBarInside.classList.add('loading-inside')
 
-    loaderContent.src='./logo.png'
+    loaderContent.src='./assets/logo-light.png'
     loaderLayout.appendChild(loadingBarInside)
     loaderLayout.appendChild(loadingBar)
     loaderLayout.appendChild(loaderContent)
     document.body.append(loaderLayout)
     setTimeout(()=>loaderLayout.remove(),4000)
 }
-loader()
 
 // mengecek apakah isCheckDetails? berisi true atau false nya
 // jika true, maka akan memanggil fungsi produkDetails()
