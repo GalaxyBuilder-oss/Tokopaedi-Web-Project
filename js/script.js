@@ -2,7 +2,7 @@
 const favicon = document.createElement("link");
 favicon.rel = "shortcut icon";
 favicon.href = "favicon.ico";
-favicon.type = "image/x-icon";
+favicon.type = "image/x-tipe";
 document.head.appendChild(favicon);
 
 // link API yang digunakan
@@ -96,10 +96,7 @@ async function init() {
     const [products, categories] = await Promise.all([
       fetch(productAPI).then((res) => res.json()),
       fetch(categoryAPI).then((res1) => res1.json()),
-    ]).catch(() => {
-      alert("Failed to load products. Please check your connection.");
-      return [[], []];
-    });
+    ]);
     const footerLink = document.querySelector(".container-footer .testa");
     const currYear = new Date().getFullYear();
     footerLink.innerText = `Tokopaedi © ${currYear} - All Rights Reserved`;
@@ -131,7 +128,9 @@ async function init() {
       cartGo.addEventListener("click", () => {
         let i = JSON.parse(localStorage.getItem("userdata"));
         alert(
-          `You Have ${i.cart != null ? i.cart : 0} Goods in Cart!`
+          `You Have ${
+            i[parseInt(localStorage.getItem("user_id"))].cart
+          } Goods in Cart!`
         );
       });
       profileGo.addEventListener("click", () => {
